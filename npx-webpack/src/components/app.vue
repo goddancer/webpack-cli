@@ -19,7 +19,10 @@
       /*eslint-disable-next-line*/
       console.log(a)
       const foo = () => (false)
-      /*eslint-disable-next-line*/
+      const reallyLongArg = () => (false)
+      const omgSoManyParameters = () => (false)
+      const IShouldRefactorThis = () => (false)
+      const isThereSeriouslyAnotherOne = () => (false)
       foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
     },
   }
