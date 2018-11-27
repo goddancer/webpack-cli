@@ -39,7 +39,7 @@ module.exports = {
     // allow async-await
     //'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // 属性在第一行写一个，比如src，然后其他的换行写，比如alt
     "vue/max-attributes-per-line": [2, {
       "singleline": 1,
