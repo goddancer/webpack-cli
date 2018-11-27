@@ -18,6 +18,9 @@
       const a = ['123123123123123123123123123123123123123123123123123123', '123123123123123123123123123', '123123123123123123123123123', '123123123123123123123123123']
       /*eslint-disable-next-line*/
       console.log(a)
+      const foo = () => (false)
+      /*eslint-disable-next-line*/
+      foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
     },
   }
 </script>
