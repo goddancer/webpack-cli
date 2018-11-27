@@ -16,7 +16,7 @@ const extractLESS = new ExtractTextPlugin('app.css');
 module.exports = () => {
     let config = {
         mode: 'development',
-        entry: './src/main.js',
+        entry: ['./src/main.js'],
         output: {
             // 添加hash可以防止文件缓存，每次都会生成4位的hash串
             filename: 'app.[hash:5].js',
@@ -107,10 +107,8 @@ module.exports = () => {
     }
 
     // add hot-reload related code to entry chunks
-    /*Object.keys(config.entry).forEach(function(name) {
-        config.entry[name] = ['./scripts/dev-client'].concat(config.entry[name])
-    })*/
-
+    // 这里的思想是：在每个需要热刷新的entry之前都要添加监听器。这里只有一个entry，所以这么写。
+    config.entry.unshift('./scripts/dev-client')
 
     return config
 }

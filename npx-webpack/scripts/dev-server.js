@@ -23,8 +23,6 @@ const hotMiddleware = require('webpack-hot-middleware')(compiler)
 compiler.hooks.compilation.tap('MyHtmlWebPackHotReload', compilation => {
     compilation.hooks.htmlWebpackPluginAfterEmit.intercept({
         call: () => {
-            console.log(111111111)
-            // eventEmitter.emit('reload')
             hotMiddleware.publish({ action: 'reload' })
         },
     })
