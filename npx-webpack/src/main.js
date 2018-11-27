@@ -12,11 +12,11 @@ import es6Promise from 'es6-promise'
 es6Promise.polyfill()
 
 new Vue({
-    el: 'app',
-    data: {},
-    components: {
-        App
-    },
-    methods: {},
-    render: h => h(App),
+  el: 'app',
+  components: {
+    App
+  },
+  data: {},
+  methods: {},
+  render: h => h(App),
 })

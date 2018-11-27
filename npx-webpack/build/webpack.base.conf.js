@@ -92,6 +92,16 @@ module.exports = () => {
                         },
                     },
                 },
+                {
+                    test: /\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    enforce: 'pre',
+                    include: [/src\//],
+                    exclude: [/src\/vendor/],
+                    options: {
+                        formatter: require('eslint-friendly-formatter'),
+                    },
+                },
             ]
         },
         plugins: [

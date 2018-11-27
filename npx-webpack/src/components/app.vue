@@ -23,7 +23,7 @@
       const omgSoManyParameters = () => (false)
       const IShouldRefactorThis = () => (false)
       const isThereSeriouslyAnotherOne = () => (false)
-      
+
       foo(reallyLongArg(), omgSoManyParameters(), IShouldRefactorThis(), isThereSeriouslyAnotherOne());
     },
   }
