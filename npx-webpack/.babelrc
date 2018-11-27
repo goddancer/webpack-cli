@@ -1,0 +1,23 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 10"]
+      }
+    }],
+    "stage-0"
+  ],
+  "plugins": [
+    ["component", [
+      {
+        "libraryName": "mint-ui",
+        "style": true }
+    ],
+      ["transform-runtime"]
+    ],
+    ["transform-runtime"]
+  ],
+  "compact": false,
+  "comments": false
+}

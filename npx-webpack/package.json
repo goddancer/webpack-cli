@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./dist/*",
-    "conf-zjc": "webpack --mode=development --config build/webpack.zjc.conf.js --progress --display-modules --colors --display-reasons",
-    "conf-four": "webpack --mode=development --config build/webpack.four.conf.js --progress --display-modules --colors --display-reasons",
-    "build": "npm run clean && npm run conf-four",
+    "product:details": "webpack --mode=production --config build/webpack.prod.conf.js --progress --display-modules --colors --display-reasons",
+    "product": "webpack --mode=production --config build/webpack.prod.conf.js --progress --colors",
+    "build": "npm run clean && npm run product",
     "dev": "node ./scripts/dev-server.js"
   },
   "repository": {
@@ -35,7 +35,7 @@
     "@babel/polyfill": "^7.0.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
+    "babel-loader": "^7.1.1",
     "babel-plugin-component": "^1.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
@@ -69,6 +69,7 @@
     "webpack-cli": "^3.1.2",
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3",
+    "webpack-merge": "^4.1.4",
     "zjc-object-assign": "^1.0.5"
   }
 }
