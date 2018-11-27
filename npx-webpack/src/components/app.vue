@@ -1,8 +1,8 @@
 <template>
     <div class="app">
-        111
         <img src="../assets/bg.jpeg" alt="">
         <div class="rotate"></div>
+        <div class="tt">123123123</div>
     </div>
 </template>
 
@@ -24,10 +24,15 @@
         height: 100%;
         background: url("../assets/bg.jpeg") no-repeat center top / 100% 100%;
         .rotate{
-            width: 50px;
-            height: 50px;
+            width: 75px;
+            height: 75px;
             background: #c0c;
             animation: rotate linear 1.5s infinite;
+        }
+        .tt{
+            line-height: 75px;
+            font-size: 50px;/*nor*/
+            color: #fff;
         }
     }
 </style>

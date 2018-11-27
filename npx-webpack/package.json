@@ -56,6 +56,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
     "postcss-url": "^8.0.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
@@ -70,6 +71,7 @@
     "webpack-dev-middleware": "^3.4.0",
     "webpack-hot-middleware": "^2.24.3",
     "webpack-merge": "^4.1.4",
+    "xianyukeji-postcss-px2rem": "^0.4.1",
     "zjc-object-assign": "^1.0.5"
   }
 }

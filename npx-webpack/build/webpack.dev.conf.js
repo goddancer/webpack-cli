@@ -19,7 +19,7 @@ module.exports = () => {
             new OpenBrowserPlugin({
                 url: 'http://localhost:3000',
             }),
-        ]
+        ],
     })
 
     // add hot-reload related code to entry chunks
