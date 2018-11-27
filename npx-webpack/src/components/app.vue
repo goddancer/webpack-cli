@@ -15,6 +15,9 @@
     },
     methods: {},
     mounted() {
+      const a = ['123', '1123123', '123123123', '123123123']
+      /*eslint-disable-next-line*/
+      console.log(a)
     },
   }
 </script>
