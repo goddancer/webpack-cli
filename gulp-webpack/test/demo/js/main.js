@@ -1,4 +1,5 @@
-import {HttpUtil} from '../../../library/js/utils/httpUtil';
+/*
+// import {HttpUtil} from '../../../library/js/utils/httpUtil';
 import '../css/index.scss';
 import '../component/layer.html';
 import '../css/index.less';
@@ -33,4 +34,8 @@ const mainVue = new Vue({
       console.log(str);
     }
   }
-});
+});*/
+const a = () => {
+  /*eslint-disable-next-line*/
+  console.log('hola gulp-webpack')
+}
