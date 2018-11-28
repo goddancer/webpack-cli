@@ -1,0 +1,38 @@
+/*base.css开始*/
+html, body, p,span, div, a, ul,ol,li, h1, h2, h3, h4 {
+  margin: 0;
+  padding: 0;
+}
+*{
+  box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+}
+a{
+  text-decoration: none;
+}
+li{
+  list-style: none;
+  background: url("../img/bg.jpg") no-repeat center top;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+a:link{
+  color: #000;
+}
+a:visited{
+  color: #000;
+}
+.clear:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+/*base.css结束*/

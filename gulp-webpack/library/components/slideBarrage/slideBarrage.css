@@ -1,0 +1,32 @@
+/*barrage*/
+#barrage {
+  color: #ed9c28;
+  overflow: hidden; }
+  #barrage ul li {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    border: 1px solid #cccc99;
+    border-radius: 0 15px 15px 0;
+    padding: 0 5px;
+    background: rgba(0, 0, 0, 0.5); }
+    #barrage ul li.brg-enter-active {
+      transition: all 8s linear; }
+    #barrage ul li .p_head {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      vertical-align: top;
+      position: absolute;
+      left: -1rem;
+      top: -0.25rem;
+      overflow: hidden; }
+    #barrage ul li .p_text {
+      height: 1.5rem;
+      line-height: 1.5rem;
+      margin-left: 1rem;
+      font-size: 0.8rem;
+      white-space: pre;
+      vertical-align: top; }
+
+/*# sourceMappingURL=slideBarrage.css.map */

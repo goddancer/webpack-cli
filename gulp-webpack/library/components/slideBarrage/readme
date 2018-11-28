@@ -1,0 +1,31 @@
+组件插入方式：
+<barrage :barrage-id="'sphd_hkjz201709'" :barrage-num="20" :barrage-type="'cctvnews'" :auto="bag" v-show="bag" ref="barrage"></barrage>
+参数说明：
+1、barrage-id 必传，获取弹幕数据的接口id。
+2、barrage-num 选传，默认20，每次获取的弹幕数量。
+3、barrage-type 选传，默认news，获取接口的对应数据类型。
+4、auto：必传。布尔值与v-show绑定。这里请看注释2)
+5、ref：barrage。开放的操纵子组件的入口。对应子组件方法emptySlide(a,b)。
+    可以在父组件中定义任意变量(这里是bag)，控制组件显示隐藏。
+    以下是在父组件中调用子组件的方法。参数说明：emptySlide(a,b)  a:布尔值，必传。只有当其为true的时候，子组件才会获取数据。
+                                                                b:Number，选传。子组件直接获取数据开始累加的起始页码。这里请看注释1)。
+    changeSlide:function(){
+            this.bag=!this.bag;
+            this.$refs.barrage.emptySlide(this.bag);
+          }
+6、changeSlide建议书写形式
+    changeSlide:function(){
+            this.bag=!this.bag;
+            if(this.bag){
+              this.$nextTick(function(){
+                this.$refs.barrage.emptySlide(this.bag);
+              })
+            }
+          }
+注释：
+    1)由于v-show与v-if渲染机制的不同。
+    采用v-if控制组件的时候，会在每次的显示与不显示切换的时候，释放相应的数据缓存，造成不传入页码的每次切换后，弹幕数据自动从第一页开始获取。
+    采用v-show的时候，由于缓存未释放，在不传入页码的时候，弹幕数据在每次切换后，会从断点页继续累加获取。
+    2)同时由于v-show的特点，会在页面自动渲染上要显示的transition队列元素，造成队列元素应用了动画钩子函数却无法显示出来，再次显示则会出现错乱。所以需要传入参数，使需要页面加载时自动执行动画队列才自动加载第一组数据。
+关于布局：
+    #barrage会根据距离最近的一个父级(position:relative)节点顶部进行定位。

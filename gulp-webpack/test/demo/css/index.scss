@@ -1,0 +1,13 @@
+/*这里是scss开始*/
+html, body{
+  width:100%;
+  height:100%;
+  padding: 0;
+  margin: 0;
+}
+div{
+  display: flex;
+  font-weight: bold;
+  background: url("../img/bg.jpg") no-repeat center top;
+}
+/*这里是scss结束*/
