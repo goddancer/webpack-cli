@@ -25,7 +25,7 @@
 
 - dev 下模块热替换、热刷新、自动打开浏览器
 
-- prod 下：dist 目录下分为 img 文件夹及其他静态资源（包括 app.[hash:5].js、app.css、reset.css、index.html）、暂时 reset.css 为 css 依赖库及样式重置代码的集合，以后缀.css 识别、其余.less 样式代码，包括 vue 中 lang=less 的代码，打包到 app.css
+- prod 下：dist 目录下分为 img 文件夹及其他静态资源（包括 app.[hash:5].js、app.css、base.css、index.html）、暂时 reset.css 为 css 依赖库及样式重置代码的集合，以后缀.css 识别、其余.less 样式代码，包括 vue 中 lang=less 的代码，打包到 app.css
 
 ### 1.2、部分功能实现说明
 

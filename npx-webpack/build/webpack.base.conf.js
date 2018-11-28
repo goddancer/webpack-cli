@@ -9,7 +9,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin') // vue-loader need VueL
 
 // Create multiple instances
 const extractCSS = new ExtractTextPlugin({
-  filename: 'reset.css',
+  filename: 'base.css',
 })
 const extractLESS = new ExtractTextPlugin('app.css')
 
