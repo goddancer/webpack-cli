@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./dist/*",
-    "product:details": "webpack --mode=production --config build/webpack.prod.conf.js --progress --display-modules --colors --display-reasons",
-    "product": "webpack --mode=production --config build/webpack.prod.conf.js --progress --colors",
+    "product:details": "cross-env NODE_ENV=production webpack --mode=production --config build/webpack.prod.conf.js --progress --display-modules --colors --display-reasons",
+    "product": "cross-env NODE_ENV=production webpack --mode=production --config build/webpack.prod.conf.js --progress --colors",
     "build": "npm run clean && npm run product",
-    "dev": "node ./scripts/dev-server.js",
+    "dev": "cross-env NODE_ENV=development node ./scripts/dev-server.js",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -52,6 +52,7 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.26.0",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",

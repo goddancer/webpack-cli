@@ -67,5 +67,7 @@ module.exports = {
     'vue/name-property-casing': ['never'],
     // 不考虑vue的钩子书写顺序
     'vue/order-in-components': ['never'],
+    // allow debugger during development
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
   },
 }

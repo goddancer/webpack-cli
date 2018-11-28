@@ -12,6 +12,11 @@ import es6Promise from 'es6-promise'
 // for android below 4.4.4
 es6Promise.polyfill()
 
+if (process.env.NODE_ENV === 'development') {
+  /*eslint-disable-next-line*/
+  console.log('this is development env')
+}
+
 new Vue({
   el: 'app',
   components: {

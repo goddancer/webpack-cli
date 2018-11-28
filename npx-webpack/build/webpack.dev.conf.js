@@ -7,7 +7,7 @@ const merge = require('webpack-merge')
 const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 
 // Configs
-const baseWebpackConfig = require('../config/index')()
+const baseWebpackConfig = require('./webpack.base.conf')()
 
 module.exports = () => {
   let config = merge(baseWebpackConfig, {

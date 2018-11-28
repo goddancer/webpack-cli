@@ -6,7 +6,7 @@ const merge = require('webpack-merge')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 // Configs
-const baseWebpackConfig = require('../config/index')()
+const baseWebpackConfig = require('./webpack.base.conf')()
 
 module.exports = merge(baseWebpackConfig, {
   entry: [], // 入口文件

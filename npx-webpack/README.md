@@ -46,7 +46,7 @@ module.exports = {
 
 - 热刷新
 
-见： scripts/dev-server.js、scripts/dev-client.js
+见： build/webpack.dev.conf.js、scripts/dev-server.js、scripts/dev-client.js
 
 ```json
 {
@@ -105,3 +105,7 @@ module.exports = {
 - eslint 规则配置
 
 见.eslintrc.js+.eslintignore
+
+- cross-env 将生产环境的模式绑定到进程，可以随时读取
+
+见 webpack.base.conf.js+package.json
