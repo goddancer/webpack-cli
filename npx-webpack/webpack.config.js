@@ -43,5 +43,5 @@ module.exports = merge(baseWebpackConfig, {
   ], // 对应的插件
   devServer: {}, // 开发服务器配置
   // mode: 'production', // 模式配置
-  mode: 'development', // 模式配置
+  // mode: 'development', // 模式配置
 })
