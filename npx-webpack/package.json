@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./dist/*",
+    "clean:test": "rm -rf ./test/dist/*",
     "product:details": "cross-env NODE_ENV=production webpack --mode=production --config build/webpack.prod.conf.js --progress --display-modules --colors --display-reasons",
     "product": "cross-env NODE_ENV=production webpack --mode=production --config build/webpack.prod.conf.js --progress --colors",
     "build": "npm run clean && npm run product",
     "dev": "cross-env NODE_ENV=development node ./scripts/dev-server.js",
+    "test": "npm run clean:test && npx webpack",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -29,6 +31,8 @@
   "author": "goddancer",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/polyfill": "^7.0.0",
     "border-1px.less": "^1.0.0",
     "es6-promise": "^4.2.5",
     "js-cookie": "^2.2.0",
@@ -40,8 +44,6 @@
     "zjc-object-assign": "^1.0.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/polyfill": "^7.0.0",
     "autoprefixer": "^9.3.1",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",

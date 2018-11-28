@@ -27,7 +27,7 @@
 
 - prod 下：dist 目录下分为 img 文件夹及其他静态资源（包括 app.[hash:5].js、app.css、reset.css、index.html）、暂时 reset.css 为 css 依赖库及样式重置代码的集合，以后缀.css 识别、其余.less 样式代码，包括 vue 中 lang=less 的代码，打包到 app.css
 
-### 2.1、部分功能实现说明
+### 1.2、部分功能实现说明
 
 - webpack4 不设置--mode 为 development 的时候，代码会自动压缩
 
@@ -109,3 +109,20 @@ module.exports = {
 - cross-env 将生产环境的模式绑定到进程，可以随时读取
 
 见 webpack.base.conf.js+package.json
+
+---
+
+## note
+
+uglify 可用，直接添加到 plugins 即可，但是当前版本没有使用。
+因为发现 webpack4 只要设定 mode=production 即会自动压缩代码。
+
+```text
+{
+  plugins: [
+    new uglify({
+      extractComments: true
+    }),
+  ],
+}
+```

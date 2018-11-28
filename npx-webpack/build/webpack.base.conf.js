@@ -24,11 +24,15 @@ module.exports = () => {
     module: {
       rules: [
         {
-          test: /(src|common-module)\/.*\.js$/,
+          test: /(src|common-module|test)\/.*\.js$/,
           exclude: [/src\/vendor\//, /node_modules/],
           use: [
             {
               loader: 'babel-loader', // 这里安装bebel-loader@8.0.4会出问题
+              /*options: { // 已经设置了.babelrc，这里无用
+                "presets": ['env'],
+                "plugins": ["transform-runtime"]
+              }*/
             },
           ],
         },
