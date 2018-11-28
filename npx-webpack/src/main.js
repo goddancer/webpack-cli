@@ -5,6 +5,7 @@ import Vue from 'vue'
 import './styles/reset.css'
 import './styles/style.less'
 import 'normalize.css'
+import 'whatwg-fetch'
 import App from './components/app.vue'
 import es6Promise from 'es6-promise'
 
@@ -14,7 +15,7 @@ es6Promise.polyfill()
 new Vue({
   el: 'app',
   components: {
-    App
+    App,
   },
   data: {},
   methods: {},

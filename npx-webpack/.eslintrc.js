@@ -31,7 +31,7 @@ module.exports = {
     //'space-before-blocks': 'error',
     //"space-before-function-paren": ["error", "never"],
     //'space-in-parens': ["error", "never"],
-    'no-empty': ['error', {allowEmptyCatch: true}],
+    'no-empty': ['error', { allowEmptyCatch: true }],
     curly: 'error',
     'block-scoped-var': 'error',
     'consistent-return': 'error',
@@ -41,25 +41,31 @@ module.exports = {
     // allow debugger during development
     // 'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     // 属性在第一行写一个，比如src，然后其他的换行写，比如alt
-    "vue/max-attributes-per-line": [2, {
-      "singleline": 1,
-      "multiline": {
-        "max": 1,
-        "allowFirstLine": true
-      }
-    }],
-    // 允许html标签使用双tag闭合
-    "vue/html-self-closing": ["error", {
-      "html": {
-        "void": "never",
-        "normal": "any",
-        "component": "any"
+    'vue/max-attributes-per-line': [
+      'never',
+      {
+        singleline: 1,
+        multiline: {
+          max: 1,
+          allowFirstLine: true,
+        },
       },
-      "svg": "always",
-      "math": "always"
-    }],
-    "vue/name-property-casing": ["never"],
+    ],
+    // 允许html标签使用双tag闭合
+    'vue/html-self-closing': [
+      'never',
+      {
+        html: {
+          void: 'never',
+          normal: 'any',
+          component: 'any',
+        },
+        svg: 'always',
+        math: 'always',
+      },
+    ],
+    'vue/name-property-casing': ['never'],
     // 不考虑vue的钩子书写顺序
-    "vue/order-in-components": ["never"]
+    'vue/order-in-components': ['never'],
   },
 }
