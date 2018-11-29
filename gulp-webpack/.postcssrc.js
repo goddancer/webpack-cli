@@ -5,7 +5,7 @@ module.exports = {
     'postcss-import': {},
     'postcss-url': {},
     autoprefixer: {},
-    /*'xianyukeji-postcss-px2rem': {
+    'xianyukeji-postcss-px2rem': {
       remUnit: 37.5,
       remResetMeidas: [
         {
@@ -14,6 +14,6 @@ module.exports = {
         },
       ],
       remResetPropertys: [/^border(-)?(top|bottom|left|right)?(-)?(width)?$/],
-    },*/
+    },
   },
 }

@@ -35,7 +35,9 @@ const mainVue = new Vue({
     }
   }
 });*/
+import '../css/index.less'
 const a = () => {
   /*eslint-disable-next-line*/
-  console.log('hola gulp-webpack')
+  console.log('hola gulp-webpack!')
 }
+a()
