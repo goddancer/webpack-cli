@@ -16,6 +16,7 @@ delete baseWebpackConfig.entry
 
 module.exports = merge(baseWebpackConfig, {
   context: __dirname,
+  mode: 'development',
   watch: false,
   watchOptions: {
     aggregateTimeout: 300,
