@@ -4,6 +4,10 @@
 
 create-react-app执行eject以后的一点自定义调整
 
+- 创建项目`npx create-react-app my-app`
+- 支持typescript`npx create-react-app my-app --typescript`
+- 添加TS类型定义(说明)文件`npm install --save typescript @types/node @types/react @types/react-dom @types/jest`
+
 ## 1、添加了jsconfig.json & 关于jsconfig.json的说明
  
 [jsconfig.json作用](https://s0code0visualstudio0com.icopy.site/docs/languages/jsconfig)
@@ -173,6 +177,138 @@ export default Counter;
 
 - `mobx-react-lite`是`mobx-react`的轻量版，增加了对函数式组件`hooks`的支持
 - 这里只用到了`mobx-react-lite`的`useOberver`API，其他常用的还有`useLocalStore observer`等。[参考文档](https://mobx-react.js.org/)，[npm](https://www.npmjs.com/package/mobx-react-lite)
+
+
+## 4、使用styled-components
+
+- 安装`npm i styled-components --save`
+
+### 4.1、添加normalize.css
+
+- 安装`npm i normalize.css --save`
+
+```javascript
+// App.js
+import { createGlobalStyle } from 'styled-components';
+import normalizeCss from 'normalize.css';
+
+const GlobalStyles = createGlobalStyle`
+  ${normalizeCss};
+`
+
+export default function() {
+  return (
+    <div>
+      <GlobalStyles />
+    </div>
+  )
+}
+```
+
+### 4.2、styled-componets主题方案
+
+```javascript
+// src/styles/theme
+export const themes = {
+  Light: {
+    Base0: '#F8F9FB',
+  },
+  DarkBlue: {
+    Base0: '#080B17',
+  },
+  Dark: {
+    Base0: '#000000',
+  },
+}
+export default themes;
+```
+
+- 通过`ThemeProvider`，使后代css-in-js可以通过`background-color: ${p => p.theme.Base1};`的方式使用主题变量
+```javascript
+// App.js
+import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import themes from 'src/styles/theme';
+import normalizeCss from 'normalize.css';
+import { THEME_TYPE } from 'src/data/consts';
+
+const GlobalStyles = createGlobalStyle`
+  ${normalizeCss};
+  body{
+    background-color: ${p => p.theme.Base0};
+  }
+`
+
+export default function() {
+  return (
+    <ThemeProvider theme={themes[THEME_TYPE]}>
+      <GlobalStyles />
+    </ThemeProvider>
+  )
+}
+```
+
+### 4.3、style-componts的px2rem方案
+
+```javascript
+// src/utils/px2rem
+import { css } from 'styled-components';
+
+export function px2rem(pxValue, base = 20){
+  if (Array.isArray(pxValue)) {
+    pxValue = pxValue[0]
+  }
+  return parseInt(pxValue) / base + 'rem';
+}
+// 支持多行样式
+export function mpx2rem(styles) {
+  if (typeof styles !== 'string') {
+    return styles;
+  }
+  return styles.replace(/\d+px/gm, matched => {
+    return px2rem(matched);
+  })
+}
+export default function r(string, ...extra) {
+  let styles = css(string, ...extra);
+  styles = styles.map(mpx2rem);
+
+  return [[''], styles]
+}
+```
+
+```javascript
+// some components
+import px2rem from 'src/utils/px2rem';
+
+const ContentWrapper = styled.div(...px2rem`
+  padding: 15px 0;
+  font-size: 16px;
+  color: ${p => p.theme.Text30};
+  line-height: 26px;
+  .stock{
+    display: inline-block;
+    font-size: 16px;
+    color: #49B7FF;
+    line-height: 26px;
+  }
+`)
+```
+
+## 5、
+```javascript
+```
+```javascript
+```
+
+```javascript
+```
+```javascript
+```
+
+```javascript
+```
+```javascript
+```
 
 ```javascript
 ```
