@@ -185,6 +185,8 @@ export default Counter;
 
 ### 4.1、添加normalize.css
 
+[参考github](https://github.com/sergeysova/styled-normalize)
+
 - 安装`npm i normalize.css --save`
 
 ```javascript
