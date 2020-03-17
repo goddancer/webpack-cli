@@ -296,7 +296,12 @@ const ContentWrapper = styled.div(...px2rem`
 `)
 ```
 
-## 5、
+## 5、另外还有以下方案可以参考代码
+
+* 多组件loading及errStack错误重发方案(已封装hooks)
+* 对axios的封装，包含统一的错误预处理
+
+
 ```javascript
 ```
 ```javascript
